@@ -1,0 +1,422 @@
+/* style.css */
+
+/* CSS Variables for easy theme changes */
+:root {
+  --color-primary-pink: #ff6e7f;
+  --color-secondary-orange: #e09b2d; /* Used in gradients */
+  --color-accent-orange: #ffb347; /* Used for highlights/shadows */
+  --color-accent-blue: #6dd5ed; /* Used in gradients */
+  --color-text-dark: #333;
+  --color-text-light: #6d4c41;
+  --color-background-light: #fffbe7; /* Base light background */
+  --color-background-pink-light: #ffe0e9; /* Pinkish light background */
+  --color-background-purple-light: #f8e1ff; /* Purplish light background */
+  --color-background-very-light: #fff8f0; /* Very light background */
+  --color-white: #fff;
+  --color-off-white: #fffbe7; /* Off-white for text/elements */
+  --color-off-white-transparent: #fffbe7cc; /* Semi-transparent */
+  --color-pink-light-transparent: #ffe0e9cc; /* Semi-transparent */
+  --color-white-transparent: #fff8f8cc; /* Semi-transparent */
+
+  /* Gradients */
+  --gradient-body: linear-gradient(135deg, var(--color-background-purple-light) 0%, var(--color-background-very-light) 100%);
+  --gradient-header: linear-gradient(90deg, var(--color-accent-blue) 0%, var(--color-accent-orange) 50%, var(--color-primary-pink) 100%);
+  --gradient-hero-bg: linear-gradient(120deg, var(--color-background-light) 60%, var(--color-background-pink-light) 100%);
+  --gradient-menu-bg: linear-gradient(90deg, var(--color-white) 60%, #e0f7fa 100%); /* Keeping one original gradient as example */
+  --gradient-menu-card: linear-gradient(135deg, var(--color-background-light) 70%, var(--color-background-pink-light) 100%);
+  --gradient-contact-bg: linear-gradient(90deg, var(--color-accent-orange) 60%, var(--color-accent-blue) 100%);
+  --gradient-footer: linear-gradient(90deg, var(--color-primary-pink) 0%, var(--color-secondary-orange) 100%);
+  --gradient-button: linear-gradient(90deg, var(--color-primary-pink) 0%, var(--color-secondary-orange) 100%);
+  --gradient-button-hover: linear-gradient(90deg, var(--color-secondary-orange) 0%, var(--color-primary-pink) 100%);
+
+  /* Shadows */
+  --shadow-mild: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-container: 0 2px 12px #ffb34722; /* Using original low-opacity orange */
+  --shadow-how-section: 0 1px 6px #ffb34722; /* Using original low-opacity orange */
+  --shadow-heading: 0 2px 8px #ffb34755; /* Using original medium-opacity orange */
+  --shadow-header-h1: 2px 4px 12px var(--color-accent-orange), 0 2px 8px var(--color-accent-blue);
+  --shadow-header-p: 0 1px 6px var(--color-primary-pink);
+  --shadow-hero-img: 0 6px 32px rgba(255, 179, 71, 0.25), 0 2px 12px #6dd5ed33;
+  --shadow-button: 0 2px 8px #ffb34733; /* Using original low-opacity orange */
+  --shadow-menu-card: 0 2px 16px rgba(224, 155, 45, 0.10), 0 2px 8px #6dd5ed22; /* Using original shadows */
+  --shadow-menu-card-hover: 0 8px 32px rgba(224, 155, 45, 0.18), 0 4px 16px #ff6e7f33; /* Using original shadows */
+  --shadow-menu-card-heading: 0 1px 4px #ff6e7f22; /* Using original low-opacity pink */
+  --shadow-contact-h2: 0 2px 8px #ff6e7f55; /* Using original medium-opacity pink */
+
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--gradient-body);
+  color: var(--color-text-dark);
+}
+
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: var(--color-off-white-transparent);
+  border-radius: 18px;
+  box-shadow: var(--shadow-container);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: var(--color-primary-pink);
+  margin-bottom: 1.2rem;
+  text-shadow: var(--shadow-heading);
+}
+
+.desc {
+  font-size: 1.15rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.how {
+  background: var(--color-background-pink-light);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-how-section);
+  text-align: left;
+}
+
+/* Target the h2 inside .how specifically */
+.how h2 {
+  color: var(--color-accent-orange); /* Match the inline style color */
+  margin-top: 0; /* Add margin top 0 as it was not present before */
+  margin-bottom: 1rem; /* Add a bottom margin for spacing */
+  text-shadow: none; /* Remove any potential text-shadow inherited from h1 */
+}
+
+/* Style for lists inside .how */
+.how ul {
+    padding-left: 1.5rem; /* Add some left padding */
+    margin: 0; /* Remove default margin */
+}
+
+.how li {
+    margin-bottom: 0.5rem; /* Space out list items */
+    line-height: 1.5;
+}
+
+
+.back-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: var(--gradient-button);
+  color: var(--color-off-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: var(--shadow-button);
+  transition: background 0.2s, color 0.2s; /* Added color transition */
+  margin-top: 1rem;
+}
+
+.back-btn:hover {
+  background: var(--gradient-button-hover);
+  color: var(--color-white);
+}
+
+
+/* --- Index Page Specific Styles --- */
+
+header {
+  background: var(--gradient-header);
+  padding: 2.5rem 0 1.5rem 0;
+  text-align: center;
+  box-shadow: var(--shadow-mild);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3.2rem;
+  letter-spacing: 2.5px;
+  color: var(--color-white);
+  text-shadow: var(--shadow-header-h1);
+}
+
+header p {
+  margin: 0.7rem 0 0 0;
+  font-size: 1.3rem;
+  color: var(--color-off-white);
+  font-weight: 500; /* Font-weight 400/700 loaded, 500 might not render unless available */
+  text-shadow: var(--shadow-header-p);
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1rem 2.5rem 1rem;
+  background: var(--gradient-hero-bg);
+}
+
+.hero img {
+  width: 340px;
+  max-width: 90%; /* Make image slightly responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 24px;
+  box-shadow: var(--shadow-hero-img);
+  margin: 1.2rem;
+  border: 4px solid var(--color-accent-orange);
+}
+
+.hero-text {
+  max-width: 440px;
+  margin: 1.2rem;
+  background: var(--color-white-transparent);
+  border-radius: 18px;
+  padding: 1.5rem 1.2rem;
+  box-shadow: var(--shadow-container); /* Re-using container shadow */
+}
+
+.hero-text h2 {
+  font-size: 2.2rem;
+  color: var(--color-primary-pink);
+  margin-bottom: 1.1rem;
+  text-shadow: var(--shadow-heading); /* Re-using main heading shadow */
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-light); /* Re-using light text color */
+}
+
+.menu-section {
+  background: var(--gradient-menu-bg);
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.menu-section h2 {
+  color: var(--color-primary-pink);
+  margin-bottom: 1.7rem;
+  font-size: 2.2rem;
+  text-shadow: var(--shadow-heading); /* Re-using main heading shadow */
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+/* Style for the anchor wrapping menu cards */
+.menu-items a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Make the anchor block-level to contain the card */
+    /* Remove width here, let the card manage it */
+}
+
+.menu-card {
+  background: var(--gradient-menu-card);
+  border-radius: 18px;
+  box-shadow: var(--shadow-menu-card);
+  padding: 1.7rem 1.1rem;
+  width: 240px; /* Keep width on the card */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Added ease timing */
+  border: 2px solid var(--color-accent-orange); /* Use variable */
+  display: flex; /* Use flexbox for internal layout if needed, or block */
+  flex-direction: column; /* Stack contents vertically */
+  justify-content: space-between; /* Space content out */
+  height: 100%; /* Ensure cards in a flex container have equal height */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.menu-items { /* Apply gap here to ensure consistent spacing */
+  gap: 2.2rem;
+  /* Allow flex items to wrap */
+  flex-wrap: wrap;
+}
+
+/* Ensure the anchor fills the grid/flex item space */
+.menu-items > a {
+    display: block;
+    /* Maybe min/max width or flex-basis if using flex for items directly */
+}
+
+
+.menu-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: var(--shadow-menu-card-hover);
+  border-color: var(--color-primary-pink); /* Use variable */
+}
+
+.menu-card h3 {
+  margin: 0.7rem 0;
+  color: var(--color-accent-orange);
+  font-size: 1.25rem;
+  text-shadow: var(--shadow-menu-card-heading);
+}
+
+.menu-card p {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  flex-grow: 1; /* Allow paragraph to take available space */
+  margin-bottom: 0; /* Remove default paragraph bottom margin */
+}
+
+.contact-section {
+  background: var(--gradient-contact-bg);
+  color: var(--color-white);
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.contact-section h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.9rem;
+  text-shadow: var(--shadow-contact-h2);
+}
+
+.contact-section p {
+  margin: 0.6rem 0;
+  font-size: 1.15rem;
+}
+
+.contact-section a {
+  color: var(--color-off-white);
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.contact-section a:hover {
+  color: var(--color-primary-pink);
+}
+
+footer {
+  background: var(--gradient-footer);
+  color: var(--color-off-white);
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+
+footer::before { /* Fix the semicolon showing in the footer */
+    content: "\00A9 "; /* Unicode for copyright symbol */
+    margin-right: 0.5em;
+}
+
+
+/* --- Media Queries --- */
+
+@media (max-width: 768px) { /* Adjusted breakpoint slightly common */
+     header h1 {
+        font-size: 2.5rem;
+     }
+     header p {
+        font-size: 1.1rem;
+     }
+    .hero img {
+        width: 280px; /* Slightly smaller image on medium screens */
+    }
+     .hero-text {
+        max-width: 90%; /* Allow text block to take more width */
+     }
+     .hero-text h2 {
+        font-size: 1.8rem;
+     }
+     .hero-text p {
+        font-size: 1rem;
+     }
+     .container { /* Detail page container */
+        margin: 2rem 1rem; /* Add horizontal margin */
+        padding: 2rem 1.5rem; /* Adjust padding */
+     }
+     h1 { /* Detail page heading */
+         font-size: 2rem;
+     }
+     .desc { /* Detail page description */
+         font-size: 1rem;
+     }
+     .how { /* Detail page how section */
+         padding: 1rem;
+     }
+     .how h2 {
+        font-size: 1.3rem;
+     }
+     .back-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+     }
+     .menu-section h2 {
+        font-size: 1.8rem;
+     }
+    .menu-card {
+        width: 220px; /* Adjust card width */
+        padding: 1.5rem 1rem;
+    }
+    .menu-card h3 {
+        font-size: 1.15rem;
+    }
+    .menu-card p {
+        font-size: 0.95rem;
+    }
+}
+
+
+@media (max-width: 500px) { /* Adjusted for smaller screens */
+     header {
+        padding: 2rem 0 1rem 0;
+     }
+     header h1 {
+        font-size: 2rem;
+     }
+     header p {
+        font-size: 1rem;
+     }
+    .hero {
+        flex-direction: column;
+        padding: 2.5rem 0.5rem;
+    }
+    .hero img {
+        width: 90%; /* Full width minus margin */
+        margin: 1rem auto; /* Center image */
+    }
+    .hero-text {
+        margin: 1rem auto; /* Center text block */
+        padding: 1.2rem 1rem;
+    }
+    .hero-text h2 {
+        font-size: 1.6rem;
+    }
+     .menu-section {
+        padding: 2rem 0.5rem;
+     }
+     .menu-section h2 {
+        font-size: 1.6rem;
+     }
+    .menu-items {
+      flex-direction: column; /* Stack cards vertically */
+      gap: 1.5rem; /* Adjust gap for stacking */
+      align-items: center; /* Center stacked cards */
+    }
+    .menu-card {
+      width: 90%; /* Make cards take most of the width */
+      max-width: 300px; /* Optional max width for large phones */
+    }
+    .contact-section {
+        padding: 2rem 0.5rem;
+    }
+    .contact-section h2 {
+        font-size: 1.5rem;
+    }
+    footer {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
