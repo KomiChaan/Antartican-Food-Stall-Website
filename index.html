@@ -1,139 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enjoy vibrant, heartwarming street food at Antartican Co Food Stall. Explore colorful flavors, spicy wraps, samosas, mango lassi, churros, and more!" />
   <title>Antartican Co Food Stall</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --primary-color: #ffb347;
+      --accent-color: #ff6e7f;
+      --light-bg: #fffbe7;
+      --lighter-bg: #ffe0e9;
+      --font-dark: #333;
+      --font-brown: #6d4c41;
+      --shadow-color: rgba(224, 155, 45, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #f8e1ff 0%, #fff8f0 100%);
-      color: #333;
+      color: var(--font-dark);
     }
+
     header {
-      background: linear-gradient(90deg, #6dd5ed 0%, #ffb347 50%, #ff6e7f 100%);
-      padding: 2.5rem 0 1.5rem 0;
+      background: linear-gradient(90deg, #6dd5ed 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+      padding: 2.5rem 0 1.5rem;
       text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
+
     header h1 {
       margin: 0;
       font-size: 3.2rem;
       letter-spacing: 2.5px;
       color: #fff;
-      text-shadow: 2px 4px 12px #ffb347, 0 2px 8px #6dd5ed;
+      text-shadow: 2px 4px 12px var(--primary-color), 0 2px 8px #6dd5ed;
     }
+
     header p {
-      margin: 0.7rem 0 0 0;
+      margin: 0.7rem 0 0;
       font-size: 1.3rem;
       color: #fffbe7;
       font-weight: 500;
-      text-shadow: 0 1px 6px #ff6e7f;
+      text-shadow: 0 1px 6px var(--accent-color);
     }
+
     .hero {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding: 3.5rem 1rem 2.5rem 1rem;
-      background: linear-gradient(120deg, #fffbe7 60%, #ffe0e9 100%);
+      padding: 3.5rem 1rem 2.5rem;
+      background: linear-gradient(120deg, var(--light-bg) 60%, var(--lighter-bg) 100%);
     }
+
     .hero img {
       width: 340px;
       border-radius: 24px;
       box-shadow: 0 6px 32px rgba(255, 179, 71, 0.25), 0 2px 12px #6dd5ed33;
       margin: 1.2rem;
-      border: 4px solid #ffb347;
+      border: 4px solid var(--primary-color);
     }
+
     .hero-text {
       max-width: 440px;
       margin: 1.2rem;
       background: #fff8f8cc;
       border-radius: 18px;
       padding: 1.5rem 1.2rem;
-      box-shadow: 0 2px 12px #ffb34722;
+      box-shadow: 0 2px 12px var(--shadow-color);
     }
+
     .hero-text h2 {
       font-size: 2.2rem;
-      color: #ff6e7f;
+      color: var(--accent-color);
       margin-bottom: 1.1rem;
-      text-shadow: 0 2px 8px #ffb34755;
+      text-shadow: 0 2px 8px var(--primary-color);
     }
+
     .hero-text p {
       font-size: 1.15rem;
       line-height: 1.7;
-      color: #6d4c41;
+      color: var(--font-brown);
     }
+
     .menu-section {
       background: linear-gradient(90deg, #fff 60%, #e0f7fa 100%);
       padding: 2.5rem 1rem;
       text-align: center;
     }
+
     .menu-section h2 {
-      color: #ff6e7f;
+      color: var(--accent-color);
       margin-bottom: 1.7rem;
       font-size: 2.2rem;
-      text-shadow: 0 2px 8px #ffb34733;
+      text-shadow: 0 2px 8px var(--primary-color);
     }
+
     .menu-items {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2.2rem;
     }
+
+    .menu-card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .menu-card {
-      background: linear-gradient(135deg, #fffbe7 70%, #ffe0e9 100%);
+      background: linear-gradient(135deg, var(--light-bg) 70%, var(--lighter-bg) 100%);
       border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(224, 155, 45, 0.10), 0 2px 8px #6dd5ed22;
+      box-shadow: 0 2px 16px var(--shadow-color), 0 2px 8px #6dd5ed22;
       padding: 1.7rem 1.1rem;
       width: 240px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid #ffb34733;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      border: 2px solid var(--primary-color);
     }
+
     .menu-card:hover {
       transform: translateY(-10px) scale(1.04);
       box-shadow: 0 8px 32px rgba(224, 155, 45, 0.18), 0 4px 16px #ff6e7f33;
-      border-color: #ff6e7f77;
+      border-color: var(--accent-color);
     }
+
     .menu-card h3 {
       margin: 0.7rem 0;
-      color: #ffb347;
+      color: var(--primary-color);
       font-size: 1.25rem;
-      text-shadow: 0 1px 4px #ff6e7f22;
+      text-shadow: 0 1px 4px var(--accent-color);
     }
+
     .menu-card p {
       font-size: 1.05rem;
-      color: #6d4c41;
+      color: var(--font-brown);
     }
+
     .contact-section {
-      background: linear-gradient(90deg, #ffb347 60%, #6dd5ed 100%);
+      background: linear-gradient(90deg, var(--primary-color) 60%, #6dd5ed 100%);
       color: #fff;
       text-align: center;
       padding: 2.5rem 1rem;
     }
+
     .contact-section h2 {
       margin-bottom: 1.2rem;
       font-size: 1.9rem;
-      text-shadow: 0 2px 8px #ff6e7f55;
+      text-shadow: 0 2px 8px var(--accent-color);
     }
+
     .contact-section p {
       margin: 0.6rem 0;
       font-size: 1.15rem;
     }
+
     .contact-section a {
       color: #fffbe7;
       text-decoration: underline;
       font-weight: bold;
       transition: color 0.2s;
     }
+
     .contact-section a:hover {
-      color: #ff6e7f;
+      color: var(--accent-color);
     }
+
     footer {
-      background: linear-gradient(90deg, #ff6e7f 0%, #e09b2d 100%);
+      background: linear-gradient(90deg, var(--accent-color) 0%, #e09b2d 100%);
       color: #fffbe7;
       text-align: center;
       padding: 1.2rem 0;
       font-size: 1.05rem;
       letter-spacing: 1px;
     }
+
     @media (max-width: 700px) {
       .hero {
         flex-direction: column;
@@ -143,48 +190,78 @@
         gap: 1.7rem;
       }
     }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .hero img {
+        width: 100%;
+        max-width: 320px;
+      }
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
+</head>
+<body>
   <header>
     <h1>Antartican Co Food Stall</h1>
     <p>Warm Welcomes, Colorful Flavors, and Smiles Await You!</p>
   </header>
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Food Stall">
-    <div class="hero-text">
-      <h2>Step Into Antartican Co!</h2>
-      <p>
-        Welcome to your new favorite spot for vibrant, heartwarming street food! At Antartican Co Food Stall, every dish is a celebration of color, taste, and togetherness. Whether you're here for a quick bite or a sweet treat, our friendly team is ready to serve you with a smile. Come join our food family and make every meal a memory!
-      </p>
-    </div>
-  </section>
-  <section class="menu-section">
-    <h2>Colorful Menu Highlights</h2>
-    <div class="menu-items">
-      <a href="spicy-chicken-wrap.html" style="text-decoration:none;color:inherit;"><div class="menu-card">
-        <h3>Spicy Chicken Wrap</h3>
-        <p>Juicy grilled chicken, fresh veggies, and our signature spicy sauce wrapped in a warm flatbread. A burst of flavor in every bite!</p>
-      </div></a>
-      <a href="veggie-samosas.html" style="text-decoration:none;color:inherit;"><div class="menu-card">
-        <h3>Veggie Samosas</h3>
-        <p>Crispy pastry filled with seasoned potatoes and peas, served with tangy chutney. Perfect for sharing and smiles!</p>
-      </div></a>
-      <a href="mango-lassi.html" style="text-decoration:none;color:inherit;"><div class="menu-card">
-        <h3>Mango Lassi</h3>
-        <p>Refreshing yogurt drink blended with ripe mangoes and a hint of cardamom. Sweet, cool, and oh-so-comforting.</p>
-      </div></a>
-      <a href="sweet-churros.html" style="text-decoration:none;color:inherit;"><div class="menu-card">
-        <h3>Sweet Churros</h3>
-        <p>Golden-fried churros dusted with cinnamon sugar, served with chocolate dip. Happiness in every crunch!</p>
-      </div></a>
-    </div>
-  </section>
-  <section class="contact-section">
-    <h2>Come Visit Us!</h2>
-    <p>123 Market Street, Food Plaza, Your City</p>
-    <p>Open: Mon-Sat, 11am - 9pm</p>
- 
-  
-  </section>
+
+  <main>
+    <section class="hero" aria-label="Introduction Section">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Antartican Co Food Stall with colorful dishes and welcoming setup" loading="lazy" />
+      <div class="hero-text">
+        <h2>Step Into Antartican Co!</h2>
+        <p>
+          Welcome to your new favorite spot for vibrant, heartwarming street food! At Antartican Co Food Stall, every dish is a celebration of color, taste, and togetherness. Whether you're here for a quick bite or a sweet treat, our friendly team is ready to serve you with a smile. Come join our food family and make every meal a memory!
+        </p>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu" aria-label="Menu Highlights">
+      <h2>Colorful Menu Highlights</h2>
+      <div class="menu-items">
+        <a href="spicy-chicken-wrap.html" class="menu-card-link" aria-label="View Spicy Chicken Wrap details">
+          <div class="menu-card">
+            <h3>Spicy Chicken Wrap</h3>
+            <p>Juicy grilled chicken, fresh veggies, and our signature spicy sauce wrapped in a warm flatbread. A burst of flavor in every bite!</p>
+          </div>
+        </a>
+        <a href="veggie-samosas.html" class="menu-card-link" aria-label="View Veggie Samosas details">
+          <div class="menu-card">
+            <h3>Veggie Samosas</h3>
+            <p>Crispy pastry filled with seasoned potatoes and peas, served with tangy chutney. Perfect for sharing and smiles!</p>
+          </div>
+        </a>
+        <a href="mango-lassi.html" class="menu-card-link" aria-label="View Mango Lassi details">
+          <div class="menu-card">
+            <h3>Mango Lassi</h3>
+            <p>Refreshing yogurt drink blended with ripe mangoes and a hint of cardamom. Sweet, cool, and oh-so-comforting.</p>
+          </div>
+        </a>
+        <a href="sweet-churros.html" class="menu-card-link" aria-label="View Sweet Churros details">
+          <div class="menu-card">
+            <h3>Sweet Churros</h3>
+            <p>Golden-fried churros dusted with cinnamon sugar, served with chocolate dip. Happiness in every crunch!</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-label="Contact Information">
+      <h2>Come Visit Us!</h2>
+      <p>123 Market Street, Food Plaza, Your City</p>
+      <p>Open: Mon–Sat, 11am – 9pm</p>
+      <p>Email: <a href="mailto:hello@antarticanco.com">hello@antarticanco.com</a></p>
+    </section>
+  </main>
+
   <footer>
-   2025 Antartican Co Food Stall. Made with love.
-  </footer> 
+    2025 Antartican Co Food Stall. Made with love.
+  </footer>
+</body>
+</html>
